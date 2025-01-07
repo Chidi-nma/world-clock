@@ -1,7 +1,74 @@
+body {
+  background: linear-gradient(
+    89.7deg,
+    rgb(0, 0, 0) -10.7%,
+    rgb(53, 92, 125) 88.8%
+  );
+  color: aliceblue;
+  font-family: "Roboto Mono", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.container {
+  margin: 60px auto;
+  width: 600px;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: rgba(95, 95, 95, 0.3);
+}
 h1 {
   text-align: center;
+  font-size: 36px;
+  font-family: "Orbitron", serif;
+  /* font-family: "Roboto Mono", serif; */
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+h2 {
+  margin: 0 0 5px;
+  font-size: 28px;
+}
+select {
+  display: block;
+  width: 100%;
+  border-radius: 980px;
+  padding: 10px;
+  font-size: 18px;
+  font-family: "Roboto Mono", serif;
+  font-optical-sizing: auto;
+}
+
+.city {
+  display: flex;
+  margin: 10px 0;
+  justify-content: space-between;
+  padding: 30px 0;
+  border-bottom: 1px dashed rgba(107, 107, 107, 0.71);
+}
+.city:last-child {
+  border: none;
+}
+
+.time {
+  font-size: 48px;
+  font-weight: 800;
+}
+.time small {
+  font-size: 24px;
+  line-height: 36px;
+  vertical-align: middle;
+}
+
+a {
+  color: #73d0c3;
 }
 
 footer {
   text-align: center;
+  font-size: 18px;
 }
