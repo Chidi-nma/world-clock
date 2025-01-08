@@ -8,11 +8,10 @@ function updateTime() {
   londonDateElement.innerHTML = moment()
     .tz("Europe/London")
     .format("MMMM Do YYYY");
-  //for the time element, we need to seperate the formating for AM/PM and put it in a small element. The entire innerHTML is a string.
+  //for the time element, we need to seperate the formating for AM/PM and put it in a small element. The entire innerHTML is a string. or escape using "[]"
   londonTimeElement.innerHTML = `${moment()
     .tz("Europe/London")
-    .format("H:mm:ss:SSS")} <small>${moment().format("A")}</small>`;
-  //another way to do this is [<small>]A[</smal>]
+    .format("H:mm:ss [<small>]A[</small>]")}`;
 
   //Toronto city
   let torontoElement = document.querySelector("#toronto");
@@ -23,7 +22,29 @@ function updateTime() {
     .format("MMMM Do YYYY");
   torontoTimeElement.innerHTML = `${moment()
     .tz("America/Toronto")
-    .format("H:mm:ss:SSS")} <small>${moment().format("A")}</small>`;
+    .format("H:mm:ss [<small>]A[</small>]")}`;
 }
-// updateTime();
-setInterval(updateTime, 100);
+updateTime();
+setInterval(updateTime, 1000);
+
+//Part 2 - Using the drop down to update the page with time and city.
+
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityTime = moment().tz(cityTimeZone);
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  //   console.log(cityTime.format("dddd"));
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `<div class="city">
+          <div>
+            <h2>${cityName}</h2>
+            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+          </div>
+          <div class="time">${cityTime.format(
+            "H:mm:ss"
+          )}<small> ${cityTime.format("A")}</small></div>
+        </div>`;
+}
+
+let citiesSelectElement = document.querySelector("#city");
+citiesSelectElement.addEventListener("change", updateCity);
