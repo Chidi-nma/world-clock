@@ -52,3 +52,22 @@ function updateCity(event) {
 
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
+
+//Change theme
+function changeTheme() {
+  let body = document.querySelector("body");
+  let emoji = document.querySelector("button");
+
+  // body.classList.add("light-theme");
+
+  if (body.classList.contains("light-theme")) {
+    body.classList.remove("light-theme");
+    emoji.innerHTML = `🌕`;
+  } else {
+    body.classList.add("light-theme");
+    emoji.innerHTML = `🌑`;
+  }
+}
+
+let themeButton = document.querySelector("button");
+themeButton.addEventListener("click", changeTheme);
