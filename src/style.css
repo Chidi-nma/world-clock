@@ -66,6 +66,10 @@ select {
 
 a {
   color: #73d0c3;
+  text-decoration: none;
+}
+a.home {
+  color: aliceblue;
 }
 
 footer {
